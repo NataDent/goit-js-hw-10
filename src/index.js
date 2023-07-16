@@ -11,7 +11,9 @@ const selectBox = document.querySelector('.cat-info')
 
 select.addEventListener('select', onSelect)
 
+
+
 function onSelect(e) {
     fetchCatByBreed(breedId);
-    
+
 }
