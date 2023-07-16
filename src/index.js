@@ -2,7 +2,7 @@ import axios from "axios";
 import fetchBreeds  from "./cat-api";
 import fetchCatByBreed from "./cat-api";
 
-axios.defaults.headers.common["x-api-key"] = "live_EoiEHQFHGA9fSObTg9LvrdmbjMOo1jxuHEpYvjlDJSD2ztHdQxpughVUKKy6jSwQ";
+axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
 axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
 
 const ROOT_URL = 'https://api.thecatapi.com/v1';
@@ -13,7 +13,7 @@ select.addEventListener('select', onSelect)
 
 
 
-function onSelect(e) {
-    fetchCatByBreed(breedId);
+// function onSelect(e) {
+//     fetchCatByBreed(breedId);
 
-}
+// }
