@@ -4,10 +4,25 @@ import SlimSelect from 'slim-select'
 
 const select = document.querySelector('.breed-select');
 const selectBox = document.querySelector('.cat-info');
+const loader = document.querySelector('.loader');
+const errorEl = document.querySelector('.error'); 
 
-new SlimSelect({
-  select: 'breed-select'
-})
+loader.classList.replace('loader', 'is-hidden');
+errorEl.classList.add('is-hidden');
+selectBox.classList.add('is-hidden');
+
+select.addEventListener('change', onChange);
+
+function onChange(id) {
+    fetchCatByBreed(id)
+        .then(({breedId}) => { 
+            const markap = `` 
+        })
+        .catch(error => { console.log(error.message) });
+    
+}
+
+
 
 fetchBreeds()
     .then((data) => {
