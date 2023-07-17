@@ -1,30 +1,32 @@
 import { fetchBreeds, fetchCatByBreed }  from "./cat-api";
-import SlimSelect from 'slim-select'
-
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
 const select = document.querySelector('.breed-select');
 const selectBox = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
-const errorEl = document.querySelector('.error'); 
+const errorEl = document.querySelector('.error');
+ 
+// loader.classList.add('is-hidden');
 
 
 
-select.addEventListener('change', onChange);
+// select.addEventListener('change', onChange);
 
-function onChange(id) {
-    fetchCatByBreed(id)
-        .then(({breedId}) => { 
-            const markap = `` 
-        })
-        .catch(error => { console.log(error.message) });
+// function onChange(id) {
+//     fetchCatByBreed(id)
+//         .then(({breedId}) => { 
+//             const markap = `` 
+//         })
+//         .catch(error => { console.log(error.message) });
     
-}
+// }
 
 
 
 fetchBreeds()
     .then((data) => {
-        console.log(data)
+        
         createBreedsList(data);
     })
     .catch(error => { console.log(error) });
