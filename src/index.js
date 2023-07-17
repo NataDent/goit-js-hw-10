@@ -4,7 +4,8 @@ import SlimSelect from 'slim-select'
 
 const select = document.querySelector('.breed-select');
 const selectBox = document.querySelector('.cat-info')
-
+console.log(select)
+// const selectBox = document.querySelector('.cat-info')
 
 
 const ROOT_URL = 'https://api.thecatapi.com/v1/ ';
@@ -32,7 +33,7 @@ function fetchBreeds(){
         .catch(error =>console.log(error));
 }
     
-fetchBreeds().then(data => console.log(data))
+
 
 fetchBreeds().then(createBreedsList);
 function createBreedsList(data) {

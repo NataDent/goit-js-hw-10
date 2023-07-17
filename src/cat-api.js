@@ -14,31 +14,30 @@ const instance = axios.create({
     
     headers: API_HEADERS
 });
-axios.get('https://api.thecatapi.com/v1/breeds')
+axios.get(`${ROOT_URL}breeds`)
   .then((response) => {
     console.log(response.data);
     console.log(response.status);
     console.log(response.statusText);
     console.log(response.headers);
     console.log(response.config);
-  });
+  })
+    .catch(error => console.log(error));
 
-function fetchBreeds() { 
-    return instance
-    //    return fetch (`${ROOT_URL}breeds`,{method:"GET", headers:API_HEADERS})
-        .then(resp => {
-            if (!resp.ok) {
-                throw new Error(resp.statusText);
-            }
-           return resp.json()})
-        .then(res => {
-           return res.map(obj => ({
-                id: obj.id ,
-                name: obj.name 
-            }))
-        })
-        .catch(error =>console.log(error)); 
-}
+// function fetchBreeds() { 
+//     return resp.then(resp => {
+//             if (!resp.ok) {
+//                 throw new Error(resp.statusText);
+//             }
+//            return resp.json()})
+//         .then(res => {
+//            return res.map(obj => ({
+//                 id: obj.id ,
+//                 name: obj.name 
+//             }))
+//         })
+//         .catch(error =>console.log(error)); 
+// }
     
 function fetchCatByBreed(breedId) {   
    
