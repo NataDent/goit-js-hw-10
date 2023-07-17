@@ -8,7 +8,7 @@ const API_HEADERS = new Headers({
 });
 
 // axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
+// axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
 
 
 function fetchBreeds(){   
