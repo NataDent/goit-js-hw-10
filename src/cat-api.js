@@ -10,14 +10,14 @@ function fetchBreeds() {
     });
 }
 
-// function fetchCatByBreed(breedId) {   
+function fetchCatByBreed(breedId) {   
    
-//         return fetch(`${ROOT_URL}images/search?breed_ids=${breedId}`, {method:"GET",headers:API_HEADERS}).then(req => 
-//             {if(!req.ok){
-//                 throw new Error(req.error);
-//             }
-//             return req.json();
-//         })
-//     }
+        return fetch(`${ROOT_URL}images/search?breed_ids=${breedId}`, {method:"GET",headers:API_HEADERS}).then(req => 
+            {if(!req.ok){
+                throw new Error(req.error);
+            }
+            return req.json();
+        })
+    }
 
-export { fetchBreeds };
+export { fetchBreeds, fetchCatByBreed };

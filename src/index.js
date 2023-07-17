@@ -1,9 +1,13 @@
 import { fetchBreeds, fetchCatByBreed }  from "./cat-api";
 import SlimSelect from 'slim-select'
-import 'slim-select / dist / slimselect.css';
+
 
 const select = document.querySelector('.breed-select');
 const selectBox = document.querySelector('.cat-info');
+
+new SlimSelect({
+  select: 'breed-select'
+})
 
 fetchBreeds()
     .then((data) => {
