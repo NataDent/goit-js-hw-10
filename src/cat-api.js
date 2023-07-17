@@ -1,3 +1,4 @@
+import axios from "axios";
 const ROOT_URL = 'https://api.thecatapi.com/v1';
 const X_API_KEY = 'live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V';
 const API_HEADERS = new Headers({
