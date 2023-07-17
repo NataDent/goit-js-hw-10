@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 
 const ROOT_URL = 'https://api.thecatapi.com/v1';
 const X_API_KEY = 'live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V';
@@ -7,12 +7,12 @@ const API_HEADERS = new Headers({
     'x-api-key' : X_API_KEY,
 });
 
-axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
+// axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
+axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
 
 
 function fetchBreeds(){   
-       return fetch(`${ROOT_URL}breeds`,{method:"GET", headers:API_HEADERS})
+       return fetch (`${ROOT_URL}breeds`,{method:"GET", headers:API_HEADERS})
         .then(resp => {
             if (!resp.ok) {
                 throw new Error(resp.statusText);
