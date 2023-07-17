@@ -1,18 +1,31 @@
-// import axios from "axios";
+import axios from "axios";
 
-const ROOT_URL = 'https://api.thecatapi.com/v1';
+const ROOT_URL = 'https://api.thecatapi.com/v1/';
 const X_API_KEY = 'live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V';
 const API_HEADERS = new Headers({
     'Content-Type': 'application/json',
     'x-api-key' : X_API_KEY,
 });
 
-// axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
-// axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
+axios.defaults.headers.common["x-api-key"] = "live_FRHznCkDEBA2Kr8ISlGtYpZ1nMdTqK6BKbcxoCO4g6OBxRHHn0KzH6YXTjSxLe1V";
+axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
+const instance = axios.create({
+    baseURL: `${ROOT_URL}`, 
+    
+    headers: API_HEADERS
+});
+axios.get('https://api.thecatapi.com/v1/breeds')
+  .then((response) => {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  });
 
-
-function fetchBreeds(){   
-       return fetch (`${ROOT_URL}breeds`,{method:"GET", headers:API_HEADERS})
+function fetchBreeds() { 
+    return instance
+    //    return fetch (`${ROOT_URL}breeds`,{method:"GET", headers:API_HEADERS})
         .then(resp => {
             if (!resp.ok) {
                 throw new Error(resp.statusText);
@@ -27,7 +40,8 @@ function fetchBreeds(){
         .catch(error =>console.log(error)); 
 }
     
-function fetchCatByBreed(breedId){     
+function fetchCatByBreed(breedId) {   
+   
         return fetch(`${ROOT_URL}images/search?breed_ids=${breedId}`, {method:"GET",headers:API_HEADERS}).then(req => 
             {if(!req.ok){
                 throw new Error(req.error);
