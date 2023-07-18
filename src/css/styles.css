@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+}
+.name {
+  text-align: center;
+}
+.cat-info {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
