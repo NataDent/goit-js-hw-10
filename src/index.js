@@ -50,7 +50,8 @@ function onChange(e) {
     const arreyOfCats = [];
     data.map((el) => {
     el.breeds.forEach(cat => {
-    
+        arreyOfCats.push(cat);
+        console.log(cat);
 });
     })
 
