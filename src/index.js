@@ -10,12 +10,11 @@ const box = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 
-loader.setAttribute('hidden', true)
 errorEl.setAttribute('hidden', true);
 
 fetchBreeds()
     .then((data) => {
-        loader.removeAttribute('hidden');  
+        loader.removeAttribute('hidden');
         createBreedsList(data);
     })
     .catch((err) => {
@@ -23,7 +22,7 @@ fetchBreeds()
     })
     .finally(() => {
         loader.setAttribute('hidden', true);
-        box.removeAttribute('hidden');
+        select.classList.remove('hidden');
     })
 
 function createBreedsList(data) {  
@@ -65,7 +64,6 @@ function onChange(e) {
         })
         .finally(() => {
             loader.setAttribute('hidden', true);
-            select.classList.remove('hidden');
         })
     }
 }
