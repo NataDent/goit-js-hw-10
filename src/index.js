@@ -32,7 +32,7 @@ function createBreedsList(data) {
     value: id
   }));
 
-  const emptyObj = { text: " ", value: " " };
+  const emptyObj = { text: "", value: "" };
   result.unshift(emptyObj);
 
   new SlimSelect({
@@ -48,7 +48,7 @@ function onChange(e) {
     const id = e.target.value;
     loader.removeAttribute('hidden');
     box.setAttribute('hidden', true)
-    
+    if(id) {
     fetchCatByBreed(id)
         .then(({ data }) => {
             box.setAttribute('hidden', true)
@@ -64,9 +64,10 @@ function onChange(e) {
             Notify.warning(err.message)
         })
         .finally(() => {
-          loader.setAttribute('hidden', true)
-          box.removeAttribute('hidden');
+            loader.setAttribute('hidden', true);
+            select.classList.remove('hidden');
         })
+    }
 }
 
 function createMarkupCatInfo(img, name, temperament, description) {
